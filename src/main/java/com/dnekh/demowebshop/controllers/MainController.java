@@ -1,6 +1,6 @@
 package com.dnekh.demowebshop.controllers;
 
-import com.dnekh.demowebshop.models.Items;
+import com.dnekh.demowebshop.models.Item;
 import com.dnekh.demowebshop.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index(Model model){
-        Iterable<Items> items = itemRepository.findAll();
+        Iterable<Item> items = itemRepository.findAll();
         model.addAttribute("items", items);
 //        model.addAttribute("name", "Mors");
         return "index";

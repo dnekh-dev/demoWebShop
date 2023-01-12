@@ -116,6 +116,33 @@ div.block {
     color: #6a5412;
 }
 
+form input, form textarea {
+    width: 500px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 20px;
+    resize: none;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    background: #cb5e49;
+    transition: background 500ms ease;
+}
+
+form button:hover {
+    background: #964434;
+}
+
 footer {
     float: left;
     width: 100%;
