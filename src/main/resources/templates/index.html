@@ -3,11 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Home page</title>
+	<link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
-  <div class="main_container">
-	  <h1>Hello Kitty Super Mors!</h1>
-	  <p th:text="${name}"/>
-  </div>
-</body>
+<div th:replace="layouts/header :: header"></div>
+	<div class="presentation">
+		<img src="https://petfood.ru/upload/medialibrary/e8d/15466861429660.jpg" alt="Red fluffy cat">
+		<h2>Lorem ipsum dolor sit?</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quidem totam unde.</p>
+	</div>
+	<main class="container">
+		<h1>Hello Kitty Super Mors!</h1>
+		<p th:text="${name}"/>
+	</main>
+<div th:replace="layouts/footer :: footer"></div>
 </html>

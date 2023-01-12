@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>About us</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
-  <div class="main_container">
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <p th:text="'Hello, ' + ${name} + '!'"/>
-  </div>
+<header class="container">
+    <span class="logo">demoShop</span>
+    <nav>
+        <a href="/">Home page</a>
+        <a href="/about-us">About us</a>
+    </nav>
+</header>
+<main class="container">
+    <div class="block">
+        <div class="main_container">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p th:text="'Hello, ' + ${name} + '!'"/>
+        </div>
+    </div>
+</main>
+<footer>All rights reserved</footer>
+
 </body>
 </html>
