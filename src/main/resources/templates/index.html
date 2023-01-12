@@ -6,15 +6,24 @@
 	<link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
-<div th:replace="layouts/header :: header"></div>
+<div th:replace="~{layouts/header :: header}"></div>
 	<div class="presentation">
-		<img src="https://petfood.ru/upload/medialibrary/e8d/15466861429660.jpg" alt="Red fluffy cat">
+		<img src="https://petfood.ru/upload/medialibrary/72d/424bf7a4a1d437560b25b7de80a69e5e.jpg" alt="Sneaking red fluffy cat">
 		<h2>Lorem ipsum dolor sit?</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius quidem totam unde.</p>
 	</div>
 	<main class="container">
-		<h1>Hello Kitty Super Mors!</h1>
-		<p th:text="${name}"/>
+		<div class="items" th:if="${!items.isEmpty()}">
+			<div th:each="el : ${items}">
+				<img th:src="${el.image}" th:alt="${el.title}">
+				<h3 th:text="${el.title}"/>
+				<p th:text="${el.info}"/>
+				<span th:text="${el.price} + '$'"/>
+			</div>
+		</div>
+		<!--	This div will show if there are no goods-->
+		<div class="block" th:if="${items.isEmpty()}">There are no products in stock.</div>
 	</main>
-<div th:replace="layouts/footer :: footer"></div>
+<div th:replace="~{layouts/footer :: footer}"></div>
+</body>
 </html>

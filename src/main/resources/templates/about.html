@@ -6,13 +6,7 @@
     <link rel="stylesheet" th:href="@{/main.css}">
 </head>
 <body>
-<header class="container">
-    <span class="logo">demoShop</span>
-    <nav>
-        <a href="/">Home page</a>
-        <a href="/about-us">About us</a>
-    </nav>
-</header>
+<div th:replace="~{layouts/header :: header}"></div>
 <main class="container">
     <div class="block">
         <div class="main_container">
@@ -21,7 +15,7 @@
         </div>
     </div>
 </main>
-<footer>All rights reserved</footer>
+<div th:replace="~{layouts/footer :: footer}">All rights reserved</div>
 
 </body>
 </html>

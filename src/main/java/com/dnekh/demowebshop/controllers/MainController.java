@@ -1,5 +1,8 @@
 package com.dnekh.demowebshop.controllers;
 
+import com.dnekh.demowebshop.models.Items;
+import com.dnekh.demowebshop.repository.ItemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +11,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
+    @Autowired
+    private ItemRepository itemRepository;
+
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("name", "Mors");
+        Iterable<Items> items = itemRepository.findAll();
+        model.addAttribute("items", items);
+//        model.addAttribute("name", "Mors");
         return "index";
     }
 
